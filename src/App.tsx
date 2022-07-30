@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import Ticktack from './Ticktack';
+
+const Wordle = [
+  ['e', 'e', 'e', 'e', 'e'],
+  ['e', 'e', 'e', 'e', 'e'],
+  ['e', 'e', 'e', 'e', 'e'],
+  ['e', 'e', 'e', 'e', 'e'],
+  ['e', 'e', 'e', 'e', 'e'],
+];
 
 function App() {
+  // const [board, setBoard] = useState<string[][]>(Wordle);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Ticktack/>
+      {/* <div className='board'>
+        {board.map((row) => (
+          <div className='row'>
+            {row.map((cell) => (
+              <div className='cell'>{cell}</div>
+            ))}
+          </div>
+        ))}
+      </div> */}
     </div>
   );
 }
