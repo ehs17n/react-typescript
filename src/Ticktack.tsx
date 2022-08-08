@@ -14,37 +14,26 @@ const TickTack = () => {
   const [board, setBoard] = useState(tictack);
   const [player, setPlayer] = useState('X'); // const  Player = "X"
 
-  const checkwin = () => {
-    const pattern = ['X', 'X', 'X', '', '', '', '', '', ''];
-
-  
-      const copy = [...board];
-
-      console.log(pattern);
-      
-
-  };
+  const checkwin = () => {};
 
   const playerClick = (idx: number) => {
-    if (player === 'X') {
+    const copy = [...board];
 
-
-      const copy = [...board];
-      copy[idx] = 'X';
-
-      setBoard(copy);
-
-      checkwin();
-
-      // setPlayer('O');
+    if (copy[idx] === '') {
+      copy[idx] = player;
     }
-    if (player === 'O') {
-  
+    setBoard(copy);
+    
 
-      checkwin();
+    checkwin();
 
-      setPlayer('X');
-    }
+    player === 'X' ? setPlayer('O') : setPlayer('X');
+
+    // if (player === 'O') {
+    //   checkwin();
+
+    //   setPlayer('X');
+    // }
   };
 
   return (
