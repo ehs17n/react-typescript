@@ -16,16 +16,10 @@
   border-style: solid;
   border-top-color: #7b7b7b;
   border-width: 4px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: #c0c0c0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 10px 12px;
 }
 
@@ -36,12 +30,9 @@
   border-style: solid;
   border-top-color: #7b7b7b;
   border-width: 4px;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[9];
-      grid-template-columns: repeat(9, 42px);
-  -ms-grid-rows: (1fr)[9];
-      grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
   margin-top: 16px;
 }
 
@@ -52,25 +43,17 @@
   border-style: solid;
   border-top-color: white;
   border-width: 4px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 35px;
   height: 52px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 52px;
 }
-
 .Face:active {
   border-bottom-color: white;
   border-left-color: #7b7b7b;
   border-right-color: white;
   border-top-color: #7b7b7b;
-}
-/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=App.css.map */

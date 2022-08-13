@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EACb,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,OAAO;EACd,UAAU,EAAE,KAAK;EACjB,UAAU,EAAE,MAAM;EAClB,SAAS,EAAE,IAAI;CAEhB",
-    "sources": [
-        "NumberDisplay.scss"
-    ],
-    "names": [],
-    "file": "NumberDisplay.css"
-}
+{"version":3,"sources":["NumberDisplay.scss","NumberDisplay.css"],"names":[],"mappings":"AAAA;EACE,WAAA;EACA,YAAA;EACA,cAAA;EACA,iBAAA;EACA,kBAAA;EACA,eAAA;ACCF","file":"NumberDisplay.css"}
