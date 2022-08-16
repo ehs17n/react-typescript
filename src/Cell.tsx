@@ -1,26 +1,55 @@
-import React from 'react';
-
+import React, { useContext, useEffect, useState } from 'react';
+import './App.css';
+import { AppContext } from './App';
 type CellProps = {
   Cell: string;
+  // geussWords: string;
+  // wordleWord: string;
+  // rowColor: boolean;
+  // pos: {
+  //   coll: number;
+  //   row: number;
+  // };
+};
+//asdzx
+interface AppContextInterface {
+  pos: {
+    row: number;
+    coll: number;
+  };
   geussWords: string;
   wordleWord: string;
   rowColor: boolean;
-  pos : {
-    coll: number;
-    row: number;
-  }
-};
+}
 
-const Cell: React.FC<CellProps> = ({
-  Cell,
-  geussWords,
-  wordleWord,
-  rowColor,
-}) => {
-  const cellColor = () => {
-    const almost = geussWords[0]
-  };
+const Cell: React.FC<CellProps> = ({ Cell }) => {
+  const [cellState, setCellState] = useState('green');
+  const context = useContext(AppContext)
 
-  return <div>{Cell}</div>;
+
+
+
+    const letter = board[attemptVal][letterPos];
+    // const correct = correctWord.toUpperCase()[letterPos] === letter;
+    // const almost =
+    //   !correct && letter !== '' && correctWord.toUpperCase().includes(letter);
+    // const letterState =
+    //   currAttempt.attempt > attemptVal &&
+    //   (correct ? 'correct' : almost ? 'almost' : 'error');
+
+    // useEffect(() => {
+    //   if (letter !== '' && !correct && !almost) {
+    //     console.log(letter);
+    //     setDisabledLetters((prev) => [...prev, letter]);
+    //   }
+    // }, [currAttempt.attempt]);
+
+
+
+  return (
+    <div className={cellState} id={cellState}>
+      {Cell}
+    </div>
+  );
 };
 export default Cell;

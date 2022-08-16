@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { InferencePriority } from 'typescript';
 
 import './App.css';
@@ -12,6 +12,18 @@ const Wordle = [
   ['', '', '', '', ''],
   ['', '', '', '', ''],
 ];
+
+interface AppContextInterface {
+  pos: {
+    row: number;
+    coll: number;
+  };
+  geussWords: string;
+  wordleWord: string;
+  rowColor: boolean;
+}
+
+export const AppContext = createContext<AppContextInterface | null>(null);
 
 const CorrectWords = ['master', 'gamer', 'track', 'crazy'];
 
@@ -75,19 +87,20 @@ const App = () => {
       {board.map((row) => {
         return (
           <div className='row'>
-            {row.map((cell, idx) => {
-              return (
-                <div className='cell'>
-                  <Cell
-                    Cell={cell}
-                    wordleWord={wordleWord}
-                    geussWords={geussWords}
-                    rowColor={rowColor}
-                    pos={pos}
-                  />
-                </div>
-              );
-            })}
+            <AppContext.Provider
+              value={{ pos, geussWords, wordleWord, rowColor }}
+            >
+              {row.map((cell, idx) => {
+                return (
+                  <div className='cell'>
+                    <Cell
+                      Cell={cell}
+                  
+                    />
+                  </div>
+                );
+              })}
+            </AppContext.Provider>
           </div>
         );
       })}
